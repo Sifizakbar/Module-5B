@@ -1,42 +1,44 @@
-# Pandas Program: Create and Display a DataFrame with Custom Index Labels
+# 🧪 Pandas Program: Join Two DataFrames Along Rows
 
-## 🎯 Aim
+## 🎯 AIM
 
-To create and display a **DataFrame** using the **Pandas** library in Python from a given dictionary, and apply specific index labels to the rows.
+To write a Python program using Pandas to **join two DataFrames along rows** (row-wise concatenation) and assign all data to a new DataFrame.
 
 ---
 
-## 🧠 Algorithm
+## 🧠 ALGORITHM
 
-1. **Import Libraries**: Import the required libraries – `pandas` and `numpy`.
-2. **Create Dictionary**: Define a dictionary `exam_data` with keys: `'name'`, `'score'`, `'attempts'`, and `'qualify'`.
-3. **Index Labels**: Create a list of custom index labels called `labels`.
-4. **Create DataFrame**: Use `pd.DataFrame()` to create the DataFrame by passing the dictionary and index labels.
-5. **Display Output**: Display the DataFrame using `print()` or by simply calling the DataFrame variable.
+1. **Import Libraries**: Import the `pandas` library.
+2. **Create First DataFrame**: Use a dictionary to create `student_data1`.
+3. **Create Second DataFrame**: Use another dictionary to create `student_data2`.
+4. **Concatenate DataFrames**: Use `pd.concat()` with `axis=0` to concatenate both DataFrames row-wise.
+5. **Display Result**: Print the new combined DataFrame.
 
 ---
 
 ## 💻 Program
 ```
 import pandas as pd
-import numpy as np
 
-exam_data = {
-    'name': ['Anu', 'Bala', 'Cathy', 'David', 'Eva'],
-    'score': [85, 90, 78, 92, 88],
-    'attempts': [1, 2, 1, 1, 2],
-    'qualify': ['Yes', 'Yes', 'No', 'Yes', 'Yes']
+student_data1 = {
+    'Name': ['Arun', 'Bala'],
+    'Marks': [85, 90]
 }
 
-labels = ['a', 'b', 'c', 'd', 'e']
+student_data2 = {
+    'Name': ['Cathy', 'David'],
+    'Marks': [78, 88]
+}
 
-df = pd.DataFrame(exam_data, index=labels)
+df1 = pd.DataFrame(student_data1)
+df2 = pd.DataFrame(student_data2)
 
-print(df)
+new_df = pd.concat([df1, df2], axis=0)
+
+print(new_df)
 ```
 ## Output
-
-<img width="497" height="220" alt="image" src="https://github.com/user-attachments/assets/fea6973b-88b6-45ca-8cc4-b6843dabb731" />
+<img width="532" height="226" alt="image" src="https://github.com/user-attachments/assets/7363b612-1cd0-466f-b857-3de56c9910a7" />
 
 ## Result
-Thus, the Python program to create and display a Pandas DataFrame using a dictionary with custom index labels was executed successfully and the output was verified.
+Thus, the Python program using Pandas to join two DataFrames row-wise using pd.concat() was executed successfully and the output was verified.
